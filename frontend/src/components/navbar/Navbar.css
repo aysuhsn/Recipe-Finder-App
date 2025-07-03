@@ -1,0 +1,206 @@
+:root {
+  --navbar-bg-light: #342927;
+  --navbar-border-light: #1d2425;
+  --accent-color: #ffd6a3;
+  --accent-hover: #ffffff;
+
+  --navbar-bg-dark: #0e0e0e;
+  --navbar-border-dark: #222;
+
+  --hover-bg: rgba(255, 214, 163, 0.1);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+/* === COMMON STYLES FOR BOTH MODES === */
+header.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s ease;
+}
+.navbar-icon {
+  color: var(--icon-color); /* Digər ikonlarla eyni rəng */
+  font-size: 26px;
+}
+
+.wishlist-link .MuiBadge-badge {
+  background-color: #e63946;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  top: 4px;
+  right: 4px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.icon-link:hover::after {
+  width: 100%;
+}
+
+/* Hover Effekt */
+.navbar .logo:hover,
+.navbar .navbar-right svg:hover,
+.navbar .icon-link:hover,
+.navbar .dropdown svg:hover,
+.navbar .dropdown .icon-link:hover {
+  color: var(--accent-hover);
+}
+
+/* === Light Mode === */
+.navbar.light {
+  background-color: var(--navbar-bg-light);
+  border-bottom: 2px solid var(--navbar-border-light);
+}
+
+.navbar.light .logo,
+.navbar.light .navbar-right svg,
+.navbar.light .icon-link,
+.navbar.light .dropdown svg,
+.navbar.light .dropdown .icon-link {
+  color: var(--accent-color);
+}
+
+/* === Dark Mode === */
+.navbar.dark {
+  background-color: var(--navbar-bg-dark);
+  border-bottom: 2px solid var(--navbar-border-dark);
+}
+
+.navbar.dark .logo,
+.navbar.dark .navbar-right svg,
+.navbar.dark .icon-link,
+.navbar.dark .dropdown svg,
+.navbar.dark .dropdown .icon-link {
+  color: var(--accent-color);
+}
+
+/* === Theme & Menu Button === */
+.theme-btn,
+.menu-btn {
+  background: none;
+  border: 1px solid currentColor;
+  color: var(--accent-color);
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover,
+.menu-btn:hover {
+  transform: scale(1.1);
+  color: var(--accent-hover);
+}
+
+/* === Dropdown === */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  animation: slideDown 0.4s ease;
+  backdrop-filter: blur(6px);
+}
+
+.navbar.light .dropdown {
+  background-color: var(--navbar-bg-light);
+  border-top: 2px solid var(--navbar-border-light);
+}
+
+.navbar.dark .dropdown {
+  background-color: var(--navbar-bg-dark);
+  border-top: 2px solid var(--navbar-border-dark);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .navbar-right {
+    gap: 0.7rem;
+  }
+}

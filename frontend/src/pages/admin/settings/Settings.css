@@ -1,0 +1,37 @@
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 16px;
+  background: transparent;
+}
+
+.glass-card {
+  max-width: 500px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.glass-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 255, 255, 0.3);
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.setting-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .glass-card {
+    padding: 24px 16px;
+  }
+}

@@ -1,0 +1,162 @@
+/* 🍳 LIGHT MODE */
+.ingredient-wrapper {
+  background-color: #fffaf3;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 0 2px #ffecd1, 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 2px dashed #f7cfa0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.ingredient-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3d2c1d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredient-title::before {
+  content: "👩‍🍳";
+  font-size: 1.4rem;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ingredient-input input {
+  font-size: 14px;
+}
+
+.btn {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.btn.add {
+  background-color: #fdd278;
+}
+
+.btn.search {
+  background-color: #ffb24d;
+}
+
+.btn.clear {
+  background-color: #eee;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-buttons .MuiButton-root {
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  text-transform: capitalize;
+  background-color: #fff4e3;
+  border: 1px solid #f7d9b9;
+}
+
+.filter-buttons .MuiButton-contained {
+  background-color: #ffd79e !important;
+  border: none;
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.empty-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #888;
+}
+
+.icon-button {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* 🌙 DARK MODE */
+body.dark .ingredient-wrapper {
+  background-color: #3e2b22;
+  border: 2px dashed #7a5c4c;
+  box-shadow: inset 0 0 0 2px #5a4030, 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .ingredient-title {
+  color: #f5e5d4;
+}
+
+body.dark .ingredient-input input {
+  background-color: #5a4030;
+  color: #fff5eb;
+}
+
+body.dark .btn.add {
+  background-color: #d49b55;
+  color: #fff;
+}
+
+body.dark .btn.search {
+  background-color: #c4782e;
+  color: #fff;
+}
+
+body.dark .btn.clear {
+  background-color: #7a5c4c;
+  color: #fff;
+}
+
+body.dark .filter-buttons .MuiButton-root {
+  background-color: #4e3a2f;
+  color: #f4e5d9;
+  border: 1px solid #7a5c4c;
+}
+
+body.dark .filter-buttons .MuiButton-contained {
+  background-color: #a67341 !important;
+  color: #fff !important;
+}
+
+body.dark .chip {
+  background-color: #6b4d3b;
+  color: #fff0e3;
+}
+
+body.dark .empty-text {
+  color: #bdaea1;
+}
+
+/* RESPONSIV */
+@media (max-width: 768px) {
+  .ingredient-wrapper {
+    padding: 1rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    justify-content: flex-start;
+  }
+}

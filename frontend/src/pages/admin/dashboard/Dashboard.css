@@ -1,0 +1,43 @@
+.dashboard-container {
+  padding: 40px 20px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-dashboard);
+  transition: all 0.3s ease;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-card {
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(20, 20, 20, 0.95);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7 inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00fff7, 0 0 50px #00fff7 inset;
+}
+
+[data-theme="light"] .dashboard-container {
+  background: linear-gradient(120deg, #e0f7fa, #f1f8e9);
+}
+
+[data-theme="light"] .neon-card {
+  background: white;
+  color: #1e1e1e;
+  box-shadow: 0 0 12px #8eecf5, 0 0 25px #8eecf5 inset;
+}

@@ -1,0 +1,114 @@
+/* 🌞 LIGHT və DARK MODE ORTAQ ROOT STİLİ */
+.home-root {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #fceabb, #e8d9f5, #d4fc79, #a1c4fd);
+  background-size: 800% 800%;
+  animation: gradientMove 20s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🌞 LIGHT MODE KONTEYNERLƏR */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.left-panel {
+  flex: 1;
+  background-color: #fcfbe6;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-panel {
+  flex: 1;
+  background-color: #fff4ec;
+  border-radius: 20px;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 75vh;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 🌙 DARK MODE */
+.home-root.dark {
+  background: linear-gradient(-45deg, #5e4b3c, #46343a, #374732, #2d3f52);
+  background-size: 800% 800%;
+  animation: gradientMove 20s ease infinite;
+}
+
+.home-root.dark .home-container {
+  background-color: rgba(56, 40, 32, 0.7);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+}
+
+.home-root.dark .left-panel {
+  background-color: #443128;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  color: #f5e5d4;
+}
+
+.home-root.dark .right-panel {
+  background-color: #443128;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  color: #f1ddd0;
+}
+
+/* ✨ RESPONSİVLİK */
+@media (max-width: 992px) {
+  .home-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-panel,
+  .right-panel {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-root {
+    padding: 1rem;
+  }
+
+  .home-container {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .left-panel,
+  .right-panel {
+    border-radius: 14px;
+    padding: 0.75rem;
+  }
+}
