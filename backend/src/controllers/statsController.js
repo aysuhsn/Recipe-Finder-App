@@ -1,4 +1,3 @@
-// controllers/statsController.js
 import Recipe from "../models/recipeModel.js";
 import User from "../models/userModel.js";
 import Wishlist from "../models/wishlistModel.js";
@@ -22,7 +21,7 @@ export const getAdminStats = async (req, res) => {
     const activeUsers = users.filter((user) => user.isActive).length;
 
     const wishlists = await Wishlist.find();
-    console.log("💡 Wishlistdəki sənədlər:", wishlists); // <-- Əlavə et!
+    console.log("💡 Wishlistdəki sənədlər:", wishlists); 
 
     const totalFavorites = wishlists.reduce((acc, item) => acc + (item.recipes?.length || 0), 0);
 

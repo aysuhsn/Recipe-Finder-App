@@ -10,7 +10,11 @@ import {
   Stack,
   Paper,
 } from "@mui/material";
-import { Brightness4, Language, Settings as SettingsIcon } from "@mui/icons-material";
+import {
+  Brightness4,
+  Language,
+  Settings as SettingsIcon,
+} from "@mui/icons-material";
 import { useLanguage } from "../../../context/LanguageContext";
 import { useColorMode } from "../../../context/ColorModeContext";
 import "./Settings.css";

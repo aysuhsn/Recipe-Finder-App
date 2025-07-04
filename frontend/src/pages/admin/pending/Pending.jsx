@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { CheckCircle, Cancel } from "@mui/icons-material";
-import { useLanguage } from "../../../context/LanguageContext"; // ✅
+import { useLanguage } from "../../../context/LanguageContext"; 
 
 const mockPending = [
   { id: 1, title: "Əriştəli şorba" },
@@ -16,7 +16,7 @@ const mockPending = [
 ];
 
 const Pending = () => {
-  const { t } = useLanguage(); // ✅
+  const { t } = useLanguage();
 
   return (
     <Box>

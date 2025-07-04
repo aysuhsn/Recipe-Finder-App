@@ -1,5 +1,3 @@
-// backend/src/models/User.js
-
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
@@ -27,16 +25,15 @@ const userSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["aktiv", "deaktiv"], // MongoDB-də necədirsə, modeldə də elə olsun
+      enum: ["aktiv", "deaktiv"],
       default: "aktiv",
     },
   },
   {
-    timestamps: true, // createdAt və updatedAt sahələri üçün
+    timestamps: true,
   }
 );
 
-// Modelin təkrar yaranmaması üçün yoxlayırıq:
 const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default User;

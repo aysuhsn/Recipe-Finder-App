@@ -1,4 +1,3 @@
-// src/components/IngredientInput.jsx
 import React, { useState } from "react";
 import {
   TextField,
@@ -8,7 +7,6 @@ import {
   Typography,
   IconButton,
   Tooltip,
-  Avatar,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -58,7 +56,12 @@ const IngredientInput = () => {
   };
 
   const handleCategoryClick = (cat) => {
-    dispatch(setCategory(category === cat ? "" : cat));
+    if (cat === "all") {
+      dispatch(setCategory(""));
+      searchRecipes(); 
+    } else {
+      dispatch(setCategory(category === cat ? "" : cat));
+    }
   };
 
   const searchRecipes = async () => {
@@ -104,7 +107,7 @@ const IngredientInput = () => {
           basicRecipes.find((b) => b.id === item.id)?.missedIngredientCount ?? 0,
       }));
 
-      if (category) {
+      if (category && category !== "all") {
         finalRecipes = finalRecipes.filter((recipe) =>
           recipe.dishTypes?.includes(category.toLowerCase())
         );
@@ -118,6 +121,7 @@ const IngredientInput = () => {
   };
 
   const categories = [
+    { key: "all", label: "🌐 All" },
     { key: "breakfast", label: "🍳 Breakfast" },
     { key: "lunch", label: "🍔 Lunch" },
     { key: "dinner", label: "🍽️ Dinner" },
@@ -158,7 +162,7 @@ const IngredientInput = () => {
         {categories.map((cat) => (
           <Button
             key={cat.key}
-            variant={category === cat.key ? "contained" : "outlined"}
+            variant={category === cat.key || (cat.key === "all" && !category) ? "contained" : "outlined"}
             onClick={() => handleCategoryClick(cat.key)}
           >
             {cat.label}

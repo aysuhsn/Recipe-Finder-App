@@ -4,7 +4,6 @@ import {
   TextField,
   Button,
   Typography,
-  Avatar,
   Divider,
   Chip,
 } from "@mui/material";
@@ -28,10 +27,9 @@ const ChatBox = () => {
 
     const ingredients = trimmed.split(",").map((i) => i.trim());
 
-    // User mesajı
     setMessages((prev) => [
       ...prev,
-      { type: "user", text: `🧑 Siz: ${trimmed}` },
+      { type: "user", text: `🧑 ${t("you")}: ${trimmed}` },
     ]);
     setInput("");
 
@@ -48,12 +46,11 @@ const ChatBox = () => {
           ? instructions.join("\n")
           : instructions;
 
-      // Bot mesajı
       setMessages((prev) => [
         ...prev,
         {
           type: "bot",
-          text: `👩‍🍳 Resept: ${title}`,
+          text: `👩‍🍳 ${t("recipe")}: ${title}`,
           image,
           used: usedIngredients,
           missed: missedIngredients,
@@ -115,14 +112,29 @@ const ChatBox = () => {
 
       <Box className="chatbox-input">
         <TextField
+          fullWidth
+          variant="outlined"
+          placeholder="For example: egg, flour, milk"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Məsələn: egg, flour, milk"
-          size="small"
-          fullWidth
-          onKeyDown={(e) => e.key === "Enter" && handleSend()}
+          sx={{
+            input: {
+              color: (theme) =>
+                theme.palette.mode === "dark" ? "#fff" : "#111",
+              backgroundColor: (theme) =>
+                theme.palette.mode === "dark"
+                  ? "rgba(255, 255, 255, 0.1)"
+                  : "rgba(255, 255, 255, 0.8)",
+              borderRadius: "8px",
+            },
+          }}
         />
-        <Button onClick={handleSend} variant="contained" sx={{ ml: 1 }}>
+
+        <Button
+          onClick={handleSend}
+          variant="contained"
+          className="chatbox-send-btn"
+        >
           {t("send")}
         </Button>
       </Box>

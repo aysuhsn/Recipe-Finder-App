@@ -1,4 +1,3 @@
-// src/pages/detail/RecipeDetail.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -15,6 +14,8 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { IoShareSocialSharp } from "react-icons/io5";
+import { IoMdStats } from "react-icons/io";
 
 const RecipeDetail = () => {
   const { id } = useParams();
@@ -25,22 +26,22 @@ const RecipeDetail = () => {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
-  const isFavorite = wishlistItems.some((item) => item.id === id);
+  const isFavorite = wishlistItems.some((item) => item.id === Number(id));
+
 
   const handleToggleWishlist = () => {
     if (recipe) {
-      dispatch(toggleWishlist(recipe));
+      dispatch(toggleWishlist({ ...recipe, id: Number(recipe.id) }));
     }
   };
+  
 
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        // Əvvəlcə backend-dən cəhd et
         const res = await axios.get(`/api/recipes/${id}`);
         setRecipe(res.data);
       } catch (err) {
-        // Əgər backend-də tapılmadısa Spoonacular-a bax
         try {
           const spoonRes = await axios.get(
             `https://api.spoonacular.com/recipes/informationBulk?ids=${id}&apiKey=${
@@ -143,7 +144,7 @@ const RecipeDetail = () => {
               window.open(whatsappUrl, "_blank");
             }}
           >
-            📤 Share on WhatsApp
+           <IoShareSocialSharp /> Share on WhatsApp
           </Button>
 
           <div className="section">
@@ -186,7 +187,7 @@ const RecipeDetail = () => {
               id="nutrition-header"
             >
               <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                📊 Nutrition Facts
+              <IoMdStats /> Nutrition Facts
               </Typography>
             </AccordionSummary>
             <AccordionDetails>

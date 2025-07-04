@@ -1,8 +1,6 @@
-/* src/pages/unauthorized/Unauthorized.css */
-
 .unauthorized-wrapper {
   height: 100vh;
-  background-image: url("https://i.imgur.com/tVW7VhB.jpeg"); /* Bulanıq blur fon */
+  background-image: url("https://i.imgur.com/tVW7VhB.jpeg"); 
   background-size: cover;
   background-position: center;
   display: flex;

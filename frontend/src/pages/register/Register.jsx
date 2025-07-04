@@ -50,7 +50,6 @@ const Register = () => {
 
   return (
     <div className="register-wrapper">
-      {/* Floating ingredients */}
       <div className="floating-ingredients">
         <img src="/tomato.png" alt="tomato" />
         <img src="/chili.png" alt="chili" />
@@ -60,7 +59,6 @@ const Register = () => {
         <img src="/cheese.png" alt="cheese" />
       </div>
 
-      {/* Glassy neon container */}
       <div className="register-glass-container">
         <div className="logo-circle neon-glow">
           <PiChefHatThin color="#00ffff" size={32} />

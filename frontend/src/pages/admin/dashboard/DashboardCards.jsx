@@ -1,5 +1,3 @@
-// src/components/dashboard/DashboardCards.jsx
-
 import React from "react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import RestaurantIcon from "@mui/icons-material/Restaurant";

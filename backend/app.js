@@ -9,7 +9,7 @@ import statsRoute from "./src/routes/statsRoute.js";
 import adminRoutes from "./src/routes/adminRoutes.js";
 import recipeRoutes from "./src/routes/recipeRoutes.js"; 
 import spoonacularRoute from "./src/routes/spoonacular.js";
-import userRoutes from "./src/routes/userRoutes.js"; // ← bu olmalıdır
+import userRoutes from "./src/routes/userRoutes.js"; 
 import aiChatRoute from "./src/routes/aiChatRoute.js";
 
 const app = express();

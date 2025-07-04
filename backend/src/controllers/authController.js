@@ -1,4 +1,3 @@
-// backend/src/controllers/authController.js
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
@@ -72,7 +71,7 @@ export const googleLogin = async (req, res) => {
     user = new User({
       name,
       email,
-      password: googleId, // Google password sahəsinə yazılır, login üçün istifadə olunmur
+      password: googleId, 
     });
     await user.save();
   }

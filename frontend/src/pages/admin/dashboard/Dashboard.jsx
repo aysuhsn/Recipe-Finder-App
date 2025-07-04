@@ -35,7 +35,7 @@ const Dashboard = () => {
         );
         setStats(res.data);
       } catch (err) {
-        console.error("❌ Dashboard statistikası alınmadı:", err);
+        console.error("Dashboard statistikası alınmadı:", err);
       }
     };
 

@@ -8,7 +8,6 @@ export const getDashboardStats = async (req, res) => {
       (user) => user.status?.toLowerCase() === "aktiv"
     ).length;
 
-    // Yeni əlavə: bütün istifadəçilərin favoritlərinin ümumi sayı
     const totalFavorites = users.reduce(
       (acc, user) => acc + (user.favorites?.length || 0),
       0

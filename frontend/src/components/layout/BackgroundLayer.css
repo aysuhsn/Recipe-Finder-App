@@ -1,0 +1,94 @@
+/* 🌿 Floating Ingredients */
+.moving-background img {
+  position: absolute;
+  width: 180px;
+  opacity: 0.5;
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+.moving-background img:nth-child(1) {
+  top: 5%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.moving-background img:nth-child(2) {
+  top: 20%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.moving-background img:nth-child(3) {
+  bottom: 5%;
+  left: 45%;
+  animation-delay: 4s;
+}
+
+.moving-background img:nth-child(4) {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 1s;
+}
+
+.moving-background img:nth-child(5) {
+  top: 80%;
+  left: 5%;
+  animation-delay: 3s;
+}
+
+.moving-background img:nth-child(6) {
+  top: 40%;
+  right: 30%;
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .moving-background img {
+    width: 100px; 
+    opacity: 0.4;
+  }
+
+  .moving-background img:nth-child(1) {
+    top: 8%;
+    left: 2%;
+  }
+
+  .moving-background img:nth-child(2) {
+    top: 15%;
+    right: 5%;
+  }
+
+  .moving-background img:nth-child(3) {
+    bottom: 8%;
+    left: 20%;
+  }
+
+  .moving-background img:nth-child(4) {
+    bottom: 5%;
+    right: 10%;
+  }
+
+  .moving-background img:nth-child(5) {
+    top: 55%;
+    left: 10%;
+  }
+
+  .moving-background img:nth-child(6) {
+    top: 35%;
+    right: 15%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}

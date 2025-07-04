@@ -1,4 +1,3 @@
-// src/layout/AdminLayout.jsx
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../sideBar/SideBar";
@@ -34,7 +33,7 @@ const AdminLayout = () => {
         component="main"
         sx={{
           flexGrow: 1,
-          ml: { md: "240px" }, // Desktopda sidebar qədər boşluq
+          ml: { md: "240px" }, 
           mt: { xs: "64px", md: 0 },
           p: 3,
           width: "100%",

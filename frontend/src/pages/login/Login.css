@@ -19,7 +19,7 @@
 /* 🌿 Floating Ingredients */
 .floating-ingredients img {
   position: absolute;
-  width: 180px; /* daha böyük */
+  width: 180px; 
   opacity: 0.5;
   z-index: 0;
   animation: float 6s ease-in-out infinite;
@@ -75,7 +75,6 @@
   }
 }
 
-/* 🍳 Glassy Login Box */
 .glass-container {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);

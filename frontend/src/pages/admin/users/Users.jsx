@@ -160,7 +160,8 @@ const Users = () => {
                 </Box>
 
                 <Box display="flex" justifyContent="flex-end" gap={1}>
-                  <Tooltip title={t("edit")}>...
+                  <Tooltip title={t("edit")}>
+                    ...
                     <IconButton
                       onClick={() => {
                         setSelectedUser({
@@ -225,7 +226,11 @@ const Users = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>{t("cancel")}</Button>
-          <Button onClick={handleConfirmDelete} color="error" variant="contained">
+          <Button
+            onClick={handleConfirmDelete}
+            color="error"
+            variant="contained"
+          >
             {t("delete")}
           </Button>
         </DialogActions>

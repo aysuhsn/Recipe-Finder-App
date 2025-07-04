@@ -21,7 +21,6 @@ import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import RecipeFormModal from "../recipeModals/RecipeFormModal";
-import "./Recipes.css";
 import { useLanguage } from "../../../context/LanguageContext";
 
 const Recipes = () => {
@@ -73,16 +72,20 @@ const Recipes = () => {
           `http://localhost:5000/api/admin/recipes/${editingRecipe._id}`,
           data
         );
-        setRecipes((prev) =>
-          [res.data, ...prev.filter((r) => r._id !== editingRecipe._id)]
-        );
+        setRecipes((prev) => [
+          res.data,
+          ...prev.filter((r) => r._id !== editingRecipe._id),
+        ]);
         toast.success(t("recipeUpdated"));
       } catch {
         toast.error(t("recipeUpdateFailed"));
       }
     } else {
       try {
-        const res = await axios.post("http://localhost:5000/api/admin/recipes", data);
+        const res = await axios.post(
+          "http://localhost:5000/api/admin/recipes",
+          data
+        );
         setRecipes((prev) => [res.data, ...prev]);
         toast.success(t("recipeAdded"));
       } catch {
@@ -99,38 +102,37 @@ const Recipes = () => {
 
   return (
     <Box className="recipe-container">
-<Stack
-  direction={{ xs: "column", sm: "row" }}
-  justifyContent="space-between"
-  alignItems={{ xs: "stretch", sm: "center" }}
-  spacing={2}
-  mb={2}
->
-  <Typography variant="h5" fontWeight={600}>
-    {t("recipes")}
-  </Typography>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="space-between"
+        alignItems={{ xs: "stretch", sm: "center" }}
+        spacing={2}
+        mb={2}
+      >
+        <Typography variant="h5" fontWeight={600}>
+          {t("recipes")}
+        </Typography>
 
-  <Stack
-    direction={{ xs: "column", sm: "row" }}
-    spacing={1}
-    alignItems={{ xs: "stretch", sm: "center" }}
-  >
-    <Button
-      variant="contained"
-      startIcon={<AddIcon />}
-      onClick={() => {
-        setEditingRecipe(null);
-        setOpenModal(true);
-      }}
-    >
-      {t("addRecipe")}
-    </Button>
-    <Button variant="outlined" onClick={handleExportPDF}>
-      {t("exportPDF")}
-    </Button>
-  </Stack>
-</Stack>
-
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={1}
+          alignItems={{ xs: "stretch", sm: "center" }}
+        >
+          <Button
+            variant="contained"
+            startIcon={<AddIcon />}
+            onClick={() => {
+              setEditingRecipe(null);
+              setOpenModal(true);
+            }}
+          >
+            {t("addRecipe")}
+          </Button>
+          <Button variant="outlined" onClick={handleExportPDF}>
+            {t("exportPDF")}
+          </Button>
+        </Stack>
+      </Stack>
 
       <Grid container spacing={2}>
         {recipes.map((recipe, index) => (
@@ -177,7 +179,12 @@ const Recipes = () => {
                 </Box>
               </Stack>
 
-              <Stack direction="row" justifyContent="flex-end" spacing={1} mt={2}>
+              <Stack
+                direction="row"
+                justifyContent="flex-end"
+                spacing={1}
+                mt={2}
+              >
                 <Tooltip title={t("editRecipe")}>
                   <IconButton onClick={() => handleEdit(recipe)}>
                     <FiEdit2 size={18} />

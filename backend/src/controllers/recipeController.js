@@ -13,7 +13,6 @@ export const getAllRecipes = async (req, res) => {
       .json({ message: "Failed to get recipes", error: err.message });
   }
 };
-// controllers/recipeController.js
 
 export const getRecipesByIngredients = async (req, res) => {
   const { ingredients, category } = req.query;
@@ -56,7 +55,7 @@ export const createRecipe = async (req, res) => {
       instructions,
       image,
       category,
-      spoonacularId, // bunu əlavə etdin
+      spoonacularId, 
     } = req.body;
 
     if (!name || !ingredients || !instructions) {
@@ -71,7 +70,7 @@ export const createRecipe = async (req, res) => {
       instructions,
       image,
       category,
-      spoonacularId, // bunu da daxil etdin
+      spoonacularId,
     });
 
     const savedRecipe = await newRecipe.save();

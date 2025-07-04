@@ -9,7 +9,6 @@ export const useColorMode = () => useContext(ColorModeContext);
 export const ColorModeProvider = ({ children }) => {
   const [mode, setMode] = useState("light");
 
-  // 🟡 Refresh zamanı localStorage-dan oxu
   useEffect(() => {
     const savedMode = localStorage.getItem("colorMode");
     if (savedMode) {
@@ -17,7 +16,6 @@ export const ColorModeProvider = ({ children }) => {
     }
   }, []);
 
-  // 🟢 Dark mode dəyişəndə yadda saxla
   const toggleColorMode = () => {
     setMode((prevMode) => {
       const newMode = prevMode === "light" ? "dark" : "light";

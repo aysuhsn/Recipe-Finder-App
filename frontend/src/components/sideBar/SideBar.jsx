@@ -1,4 +1,3 @@
-// src/components/sidebar/Sidebar.jsx
 import React from "react";
 import {
   Drawer,
@@ -58,7 +57,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
   return (
     <>
-      {/* Mobil cihazlar üçün Drawer */}
       <Drawer
         variant="temporary"
         open={mobileOpen}
@@ -76,7 +74,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         {drawerContent}
       </Drawer>
 
-      {/* Desktop üçün sabit Drawer */}
       <Drawer
         variant="permanent"
         open

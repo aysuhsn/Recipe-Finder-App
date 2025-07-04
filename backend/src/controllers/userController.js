@@ -1,5 +1,3 @@
-// 📁 backend/controllers/userController.js
-
 import User from "../models/userModel.js";
 
 export const getAllUsers = async (req, res) => {

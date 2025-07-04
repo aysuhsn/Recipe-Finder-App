@@ -6,7 +6,6 @@ const ProtectedRoute = ({ children, requireAdmin = false }) => {
 
   if (!user) return <Navigate to="/login" replace />;
 
-  // Konsola baxmaq üçün
   console.log("ProtectedRoute USER =>", user);
 
   if (requireAdmin && user?.isAdmin !== true) {

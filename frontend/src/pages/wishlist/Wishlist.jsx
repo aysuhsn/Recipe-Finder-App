@@ -1,9 +1,7 @@
-// src/pages/wishlist/Wishlist.jsx
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleWishlist } from "../../redux/slices/wishlistSlice";
 import { Link } from "react-router-dom";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import "./Wishlist.css";
 

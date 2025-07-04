@@ -7,7 +7,7 @@ import {
   getAllRecipes,
   createRecipe,
   deleteRecipe,
-  updateRecipe, // ← Əmin ol ki, bu import olunub
+  updateRecipe, 
 } from "../controllers/recipeController.js";
 
 const router = express.Router();
@@ -16,8 +16,8 @@ router.get("/dashboard", verifyToken, isAdminMiddleware, getDashboardStats);
 router.get("/dashboard", verifyToken, isAdminMiddleware, getAdminStats);
 router.get("/recipes", getAllRecipes);
 router.post("/recipes", createRecipe);
-router.put("/recipes/:id", updateRecipe); // ← BU LİNYANI ƏLAVƏ ET
-router.delete("/recipes/:id", deleteRecipe); // ← varsa, qalır
+router.put("/recipes/:id", updateRecipe); 
+router.delete("/recipes/:id", deleteRecipe); 
 router.put("/users/:id", updateUser);
 router.delete("/users/:id", verifyToken, isAdminMiddleware, deleteUser);
 

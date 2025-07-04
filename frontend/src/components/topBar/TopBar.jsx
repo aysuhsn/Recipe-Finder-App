@@ -1,5 +1,3 @@
-// src/components/topBar/TopBar.jsx
-
 import React from "react";
 import {
   AppBar,
@@ -24,7 +22,6 @@ const TopBar = () => {
   const colorMode = useContext(ColorModeContext);
 
   const handleLogout = () => {
-    // logout prosesi (müvvəqəti)
     navigate("/");
   };
 
@@ -36,17 +33,13 @@ const TopBar = () => {
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          {/* Dil dəyişimi */}
           <LanguageSwitcher />
-
-          {/* Tema dəyişimi */}
           <Tooltip title="Tema dəyiş">
             <IconButton onClick={colorMode.toggleColorMode} color="inherit">
               {theme.palette.mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
           </Tooltip>
 
-          {/* Çıxış */}
           <Tooltip title="Çıxış et">
             <IconButton onClick={handleLogout} color="inherit">
               <ExitToAppIcon />

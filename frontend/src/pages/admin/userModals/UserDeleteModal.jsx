@@ -1,5 +1,3 @@
-// src/components/admin/userModals/UserDeleteModal.jsx
-
 import React from "react";
 import {
   Dialog,

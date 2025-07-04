@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 dotenv.config();
 const router = express.Router();
 
-// GET /api/spoonacular/recipes
 router.get("/recipes", async (req, res) => {
   try {
     let allRecipes = [];
@@ -14,8 +13,8 @@ router.get("/recipes", async (req, res) => {
     for (let i = 0; i < 5; i++) {
       const response = await axios.get("https://api.spoonacular.com/recipes/random", {
         params: {
-          apiKey: process.env.SPOONACULAR_API_KEY,
-          number: 10, // hər sorğuda 10 resept
+          apiKey: process.env.VITE_SPOONACULAR_API_KEY,
+          number: 10, 
         },
       });
 
@@ -25,7 +24,6 @@ router.get("/recipes", async (req, res) => {
     const savedRecipes = [];
 
     for (let recipe of allRecipes) {
-      // Təkrarlanmamaq üçün title ilə yoxlamaq (əgər eynisi varsa əlavə etməsin)
       const exists = await Recipe.findOne({ name: recipe.title });
       if (exists) continue;
 

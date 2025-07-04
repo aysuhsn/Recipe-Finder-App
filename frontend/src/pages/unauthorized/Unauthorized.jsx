@@ -1,8 +1,7 @@
-// src/pages/unauthorized/Unauthorized.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Unauthorized.css";
-import { MdLockOutline } from "react-icons/md"; // kilid ikonu üçün
+import { MdLockOutline } from "react-icons/md"; 
 
 const Unauthorized = () => {
   const navigate = useNavigate();

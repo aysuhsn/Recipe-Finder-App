@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import User from "./src/models/userModel.js"; // Yol sənə uyğun dəyişə bilər
+import User from "./src/models/userModel.js";
 
 dotenv.config();
 
@@ -13,11 +13,10 @@ const addMissingFavoritesField = async () => {
       { $set: { favorites: [] } }
     );
 
-    console.log(`${result.modifiedCount} istifadəçiyə favorites sahəsi əlavə olundu`);
-    process.exit(); // uğurla çıx
+    process.exit(); 
   } catch (err) {
     console.error("Xəta:", err.message);
-    process.exit(1); // uğursuz çıx
+    process.exit(1); 
   }
 };
 

@@ -34,7 +34,6 @@ const recipeSchema = new mongoose.Schema({
     default: "",
   },
 
-  // ✅ Əlavə et
   spoonacularId: {
     type: Number,
     unique: true,

@@ -1,5 +1,3 @@
-// redux/slices/authSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const userFromStorage = localStorage.getItem("user");
@@ -20,7 +18,6 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isAuthenticated = true;
 
-      // LocalStorage yenilənməsi (istəyə bağlı)
       localStorage.setItem("user", JSON.stringify(action.payload.user));
       localStorage.setItem("token", action.payload.token);
     },

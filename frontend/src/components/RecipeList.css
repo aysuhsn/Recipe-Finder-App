@@ -1,12 +1,18 @@
-/* === RECIPE LIST STYLE === */
-
 .recipe-wrapper {
   padding: 1rem;
   border-radius: 16px;
-  background: linear-gradient(145deg, #fefae0, #fff5eb);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   min-height: 100vh;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: background 0.4s ease;
+  position: relative;
+  z-index: 1;
+  flex: 2;
+  width: 100%;
 }
+
 
 .filter-panel {
   display: flex;
@@ -53,11 +59,15 @@
   width: 13.5rem;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #fffaf2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: transparent !important; 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
+
 .recipe-card.locked {
   position: relative;
   filter: blur(1px) brightness(0.6);
@@ -141,7 +151,11 @@
 
 /* === DARK MODE === */
 body.dark .recipe-wrapper {
-  background: linear-gradient(145deg, #2f1e16, #3b2c22);
+  background-color: rgba(50, 30, 20, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 body.dark .filter-panel {
@@ -149,7 +163,7 @@ body.dark .filter-panel {
 }
 
 body.dark .recipe-card {
-  background-color: #4b3628;
+  background-color: #4b3628 !important;
   color: #f4e7dc;
 }
 

@@ -21,7 +21,7 @@ import Settings from "./pages/admin/settings/Settings";
 import Pending from "./pages/admin/pending/Pending";
 import Wishlist from "./pages/wishlist/Wishlist";
 
-import ColorModeContext from "./context/ColorModeContext"; // <-- BURANI ƏLAVƏ ET
+import ColorModeContext from "./context/ColorModeContext";
 
 const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  const { mode } = useContext(ColorModeContext); // DARK/LIGHT
+  const { mode } = useContext(ColorModeContext);
 
   useEffect(() => {
     document.body.classList.toggle("dark", mode === "dark");

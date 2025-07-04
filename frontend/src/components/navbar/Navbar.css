@@ -13,7 +13,6 @@
   --font-mono: 'Courier New', monospace;
 }
 
-/* === COMMON STYLES FOR BOTH MODES === */
 header.navbar {
   position: sticky;
   top: 0;
@@ -26,7 +25,7 @@ header.navbar {
   transition: background-color 0.3s ease;
 }
 .navbar-icon {
-  color: var(--icon-color); /* Digər ikonlarla eyni rəng */
+  color: var(--icon-color);
   font-size: 26px;
 }
 
@@ -181,7 +180,6 @@ header.navbar {
   }
 }
 
-/* === Responsive === */
 .mobile-only {
   display: none;
 }

@@ -1,4 +1,3 @@
-// src/components/LanguageSwitcher.jsx
 import React, { useState, useContext } from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import { MdLanguage } from "react-icons/md";

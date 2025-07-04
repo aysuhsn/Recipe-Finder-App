@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Token yoxlaması (login olan istifadeçini tanımaq üçün)
 export const authenticate = (req, res, next) => {
   const bearer = req.headers.authorization;
 
@@ -20,7 +19,6 @@ export const authenticate = (req, res, next) => {
   }
 };
 
-// Admin yoxlaması (admin panel girişləri üçün)
 export const verifyAdmin = (req, res, next) => {
   if (req.user?.isAdmin) return next();
   res.status(403).json({ message: "Sizə icazə verilmir" });
