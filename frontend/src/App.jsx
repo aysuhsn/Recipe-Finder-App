@@ -24,43 +24,53 @@ import Wishlist from "./pages/wishlist/Wishlist";
 import ColorModeContext from "./context/ColorModeContext";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Login /> },
-  { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
-  { path: "/unauthorized", element: <Unauthorized /> },
   {
-    path: "/app",
-    element: (
-      <ProtectedRoute>
-        <Layout />
-      </ProtectedRoute>
-    ),
+    path: "/",
+    errorElement: <NotFound />, // ✅ Əlavə et
     children: [
-      { index: true, element: <Home /> },
-      { path: "details/:id", element: <RecipeDetail /> },
-      { path: "details/spoonacular/:spoonacularId", element: <RecipeDetail /> },
-      { path: "wishlist", element: <Wishlist /> },
-      { path: "*", element: <NotFound /> },
-    ],
-  },
-  {
-    path: "/admin",
-    element: (
-      <ProtectedRoute requireAdmin={true}>
-        <AdminLayout />
-      </ProtectedRoute>
-    ),
-    children: [
-      { index: true, element: <Dashboard /> },
-      { path: "dashboard", element: <Dashboard /> },
-      { path: "users", element: <Users /> },
-      { path: "recipes", element: <Recipes /> },
-      { path: "categories", element: <Categories /> },
-      { path: "pending", element: <Pending /> },
-      { path: "settings", element: <Settings /> },
+      { index: true, element: <Login /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "unauthorized", element: <Unauthorized /> },
+
+      {
+        path: "app",
+        errorElement: <NotFound />,
+        element: (
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <Home /> },
+          { path: "details/:id", element: <RecipeDetail /> },
+          { path: "details/spoonacular/:spoonacularId", element: <RecipeDetail /> },
+          { path: "wishlist", element: <Wishlist /> },
+          { path: "*", element: <NotFound /> },
+        ],
+      },
+      {
+        path: "admin",
+        element: (
+          <ProtectedRoute requireAdmin={true}>
+            <AdminLayout />
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: "dashboard", element: <Dashboard /> },
+          { path: "users", element: <Users /> },
+          { path: "recipes", element: <Recipes /> },
+          { path: "categories", element: <Categories /> },
+          { path: "pending", element: <Pending /> },
+          { path: "settings", element: <Settings /> },
+        ],
+      },
+      { path: "*", element: <NotFound /> }, // ✅ fallback kimi əlavə et
     ],
   },
 ]);
+
 
 const App = () => {
   const { mode } = useContext(ColorModeContext);

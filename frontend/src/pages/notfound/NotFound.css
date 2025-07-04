@@ -4,44 +4,65 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #fdfcf8, #f6f1e7);
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
   font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #f9f6f0, #f6ece1);
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .not-found-container.dark {
-  background: linear-gradient(to bottom, #2c2c2c, #1b1b1b);
-  color: #eee;
+  background: linear-gradient(to bottom, #1b1b1b, #121212);
+  color: #e0e0e0;
 }
 
 .not-found-title {
-  font-size: 120px;
+  font-size: 140px;
   font-weight: bold;
-  color: #b71c1c;
-  margin-bottom: 20px;
+  color: #c62828;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .not-found-text {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .not-found-description {
   font-size: 18px;
-  margin-bottom: 20px;
   max-width: 500px;
+  margin-bottom: 30px;
+  opacity: 0.85;
 }
 
 .not-found-button {
   background-color: #6d4c41;
   color: white;
-  padding: 10px 25px;
-  border-radius: 10px;
-  text-transform: none;
+  padding: 12px 28px;
+  border-radius: 12px;
   font-size: 16px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .not-found-button:hover {
   background-color: #5d4037;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
